@@ -1,6 +1,7 @@
 package com.jluqgon214.examen_pmdp.data
 
 import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.jluqgon214.examen_pmdp.model.Usuario
@@ -17,12 +18,13 @@ class viewModel : ViewModel() {
     private val _apellidos = mutableStateOf("")
     val apellidos: State<String> = _apellidos
 
-    private val _edad = mutableStateOf(0)
+    private val _edad = mutableIntStateOf(0)
     val edad: State<Int> = _edad
 
-    private val _telefono = mutableStateOf(0)
+    private val _telefono = mutableIntStateOf(0)
     val telefono: State<Int> = _telefono
 
+    // No pongo comentarios porque el nombre ya dice lo que hace
     fun updateUsuario(usuario: Usuario) {
         _usuario.value = usuario
     }
